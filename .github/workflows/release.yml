@@ -19,6 +19,6 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         files: download/ZR-Delxue.zip
-        tag_name: release-${{ env.SHA_SHORT }}
+        tag_name: Release-${{ env.SHA_SHORT }}
         body: |
             ${{ github.event.head_commit.message }}
