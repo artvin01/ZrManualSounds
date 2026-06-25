@@ -13,12 +13,12 @@ jobs:
     - name: Prepare Release Archive
       run: |
         cd download
-        zip -r download-${{ env.SHA_SHORT }}.zip
+        zip -r ZR-Delxue.zip .
 
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
-        files: download-${{ env.SHA_SHORT }}.zip
+        files: download/ZR-Delxue.zip
         tag_name: release-${{ env.SHA_SHORT }}
         body: |
             ${{ github.event.head_commit.message }}
