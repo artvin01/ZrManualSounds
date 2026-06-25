@@ -6,8 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions: write-all
-  check:
-    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
     - uses: actions/setup-python@v6
