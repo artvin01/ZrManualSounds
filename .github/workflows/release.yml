@@ -13,7 +13,7 @@ jobs:
     - name: Prepare Release Archive
       run: |
         cd download
-        zip -r download-${{ env.SHA_SHORT }}.zip .
+        zip -r download-${{ env.SHA_SHORT }}.zip
 
     - name: Release
       uses: softprops/action-gh-release@v2
