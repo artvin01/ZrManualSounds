@@ -8,11 +8,13 @@ jobs:
     permissions: write-all
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v6
-        
+        uses: actions/checkout@v1
+      
       - name: Configure GitHub Environment
         run: |
+          echo "PLUGIN_VERSION_REVISION<<EOF" >> $GITHUB_ENV
           git rev-list --count HEAD >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
           echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Prepare Release Archive
