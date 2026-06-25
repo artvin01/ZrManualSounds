@@ -3,6 +3,9 @@ on:
   workflow_dispatch:
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions: write-all
   check:
     runs-on: ubuntu-latest
     steps:
