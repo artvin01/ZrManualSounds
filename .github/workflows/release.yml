@@ -13,15 +13,13 @@ jobs:
 
     - name: Prepare Release Archive
       run: |
-        mkdir release_build
-        cp download ./release_build
-        cd release_build
-        zip -r zr-release-${{ env.SHA_SHORT }}.zip .
+        cd download
+        zip -r download-${{ env.SHA_SHORT }}.zip .
 
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
-        files: release_build/zr-release-${{ env.SHA_SHORT }}.zip
+        files: download-${{ env.SHA_SHORT }}.zip
         tag_name: release-${{ env.SHA_SHORT }}
         body: |
             ${{ github.event.head_commit.message }}
